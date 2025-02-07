@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viora</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #5b97ba;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+            .gallery img {
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+        .tshirt img {
+            width: 250px;
+            height: auto;
+        }
+
+        .hoodie img {
+            width: 300px;
+            height: auto;
+        }
+
+        .question {
+            margin-top: 50px;
+            font-size: 20px;
+        }
+
+        .buttons {
+            margin-top: 10px;
+        }
+
+            .buttons button {
+                padding: 10px 20px;
+                font-size: 16px;
+                cursor: pointer;
+                border: none;
+                border-radius: 5px;
+            }
+
+        .yes {
+            background-color: #77e6cc;
+            color: white;
+        }
+
+        .no {
+            background-color: #05649c;
+            color: white;
+            position: absolute;
+        }
+
+        .new-photo {
+            margin-top: 20px;
+            display: none;
+        }
+
+            .new-photo img {
+                width: 500px;
+                height: auto;
+            }
+    </style>
+</head>
+<body>
+    <h1>Viora</h1>
+    <h2>Футболки</h2>
+    <div class="gallery tshirt">
+        <img src="https://i.pinimg.com/736x/6d/bf/00/6dbf006db35d36b1c52ba96705b3b09f.jpg" alt="Фото 1">
+        <img src="https://i.pinimg.com/736x/13/41/1f/13411fe4ec4eb78072932f33ef60ac25.jpg" alt="Фото 2">
+    </div>
+    <div class="gallery tshirt">
+        <img src="https://i.pinimg.com/736x/42/2e/4a/422e4a7ef586c2b266ed4737c1dc550b.jpg" alt="Фото 3">
+        <img src="https://i.pinimg.com/736x/41/2f/8d/412f8d7a67b9e58cf85ef0d1cec3b4c1.jpg" alt="Фото 4">
+    </div>
+
+    <div class="hoodie-section">
+        <h2>Толстовки</h2>
+        <div class="gallery hoodie">
+            <img src="https://i.pinimg.com/736x/c7/e9/75/c7e97539aba38289cd1a7fc585bc80f2.jpg" alt="Толстовка 1">
+            <img src="https://i.pinimg.com/736x/1d/3e/48/1d3e48368cdf3c7e849d85128f657e25.jpg" alt="Толстовка 2">
+        </div>
+        <div class="gallery hoodie">
+            <img src="https://i.pinimg.com/736x/f8/c7/ee/f8c7ee6f5ecb503ef2550ef64fa5556e.jpg" alt="Толстовка 3">
+            <img src="https://i.pinimg.com/736x/75/82/4b/75824bc066fbdbb16afd90b384cf99d0.jpg" alt="Толстовка 4">
+        </div>
+    </div>
+
+    <div class="question">
+        <p>Вам понравился мой бренд?</p>
+        <div class="buttons">
+            <button class="yes">Да</button>
+            <button class="no" id="noButton">Нет</button>
+        </div>
+    </div>
+
+    <div class="new-photo" id="newPhotoSection">
+        <h3>Спасибо! Вот фото:</h3>
+        <img src="https://i.pinimg.com/736x/6c/f5/98/6cf5986123138999dedca4804a701772.jpg" alt="Спасибо фото">
+    </div>
+
+    <script>
+        const yesButton = document.querySelector('.yes');
+        const newPhotoSection = document.getElementById('newPhotoSection');
+
+        yesButton.addEventListener('click', function () {
+            newPhotoSection.style.display = 'block';
+        });
+
+        const noButton = document.getElementById("noButton");
+        noButton.addEventListener("mouseover", function () {
+            const x = Math.random() * (window.innerWidth - 100);
+            const y = Math.random() * (window.innerHeight - 50);
+            noButton.style.left = `${x}px`;
+            noButton.style.top = `${y}px`;
+        });
+    </script>
+</body>
+</html>
